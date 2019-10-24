@@ -1,43 +1,16 @@
-wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/photon/R/eclipse-jee-photon-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
 
-sudo tar -zxvf eclipse.tar.gz -C /opt/
-
-64 bits
-
-wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/photon/R/eclipse-jee-photon-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
-
-
+wget -qO -- https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
 
 -
 
-[mongodb-org-3.6]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
-gpgcheck=1
-enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+echo “deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb
 
+-org/4.2 multiverse” | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
 
--...
+-
 
-- Install the MongoDB packages.
+sudo apt update
 
-Executar:
-sudo yum install -y mongodb-org-3.6.12 mongodb-org-server-3.6.12 mongodb-org-shell-3.6.12 mongodb-org-mongos-3.6.12 mongodb-org-tools-3.6.12
+-
 
-Verificar se mongod é dono dos diretórios abaixo, e caso não seja alterar para ele.
-ls -l /var/lib/mongo
-ls -l /var/log/mongodb
-                          
-- Iniciar o MongoDB.
-
-sudo service mongod start   
-
-- Testar MongoDB
-                                                                                    
-Verificar se o MongoDB foi iniciado com sucesso:
-Abrir  /var/log/mongodb/mongod.log e encontrar a linha contendo   [initandlisten] waiting for connections on port <port>
-“usar o cat mongod.log”
-
-Testar se o modo shell do mongo abre:
-mongo --host 127.0.0.1:27017
+sudo apt-get install mongodb-org
