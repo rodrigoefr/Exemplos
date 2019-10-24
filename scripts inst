@@ -7,19 +7,12 @@ sudo tar -zxvf eclipse.tar.gz -C /opt/
 wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/photon/R/eclipse-jee-photon-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
 
 
-[Unit]
-Description=MongoDB Database Service
-Wants=network.target
-After=network.target
 
-[Service]
-ExecStart=/usr/bin/mongod --config /etc/mongod.conf
-ExecReload=/bin/kill -HUP $MAINPID
-Restart=always
-User=mongodb
-Group=mongodb
-StandardOutput=syslog
-StandardError=syslog
+-
 
-[Install]
-WantedBy=multi-user.target
+[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
