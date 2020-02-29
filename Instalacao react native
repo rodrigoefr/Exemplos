@@ -1,0 +1,32 @@
+
+
+https://www.devmedia.com.br/react-native/
+
+
+*****Tentando por 
+https://medium.com/@ignit.io/react-native-construindo-apps-nativos-com-javascript-parte-1-37af2fbcde84
+
+
+passo a passo
+
+1 - Instale o Homebrew 
+contém as dependências do react native
+
+executei:
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+brew install hello
+ao executar esse apareceu comando de instalacao (apt install linuxbrew-wrapper), parece que o anterior nao funcionou
+
+dependencias
+- Homebrew
+- brew install node
+- brew install watchman
+
+erro em: react-native init ReactHotelFinder
+
+
+
+***** Tentando por
+https://docs.rocketseat.dev/ambiente-react-native/android/linux
+
