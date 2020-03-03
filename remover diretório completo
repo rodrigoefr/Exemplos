@@ -1,0 +1,4 @@
+
+
+remover diretório completo
+rm -rf diretorio
