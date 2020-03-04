@@ -1,4 +1,9 @@
+sudo apt-get update
+sudo apt-get upgrade
+ifconfig
 
 
-remover diretório completo
+#remove directory complete
 rm -rf diretorio
+
+
