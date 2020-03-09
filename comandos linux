@@ -3,8 +3,24 @@ sudo apt-get upgrade
 ifconfig
 
 
-#remove directory complete
+---------- remove directory complete
 rm -rf diretorio
 
-ver portas abertas pelo terminal-ubuntu
+---------- ver portas abertas pelo terminal-ubuntu
 netstat -tunlp
+
+---------- modificar resolução tela pelo terminal-ubuntu - https://www.vivaolinux.com.br/dica/Mudando-a-resolucao-de-video-pelo-terminal
+
+xrandr //ver as opções
+
+//irá aparecer
+ SZ:    Pixels          Physical       Refresh
+*0   1024 x 768    ( 271mm x 212mm )  *60  
+ 1    800 x 600    ( 271mm x 212mm )   60   56  
+ 2    640 x 480    ( 271mm x 212mm )   60  
+ 3    512 x 384    ( 271mm x 212mm )   60  
+ 4    400 x 300    ( 271mm x 212mm )   60   56  
+ 5    320 x 240    ( 271mm x 212mm )   60  
+ 
+//digitar, por exemplo
+xrandr -s 800x600
