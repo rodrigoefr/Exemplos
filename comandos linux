@@ -6,4 +6,5 @@ ifconfig
 #remove directory complete
 rm -rf diretorio
 
-
+ver portas abertas pelo terminal-ubuntu
+netstat -tunlp
