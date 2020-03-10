@@ -1,0 +1,100 @@
+package com.sis1;
+
+import java.util.Properties;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.json.JSONObject;
+import java.util.Date;
+
+
+public class ProdutorClima {
+	
+	private static final String topicName="TutorialTopic";
+	static String key="sample key";
+	static String value="sample value3";
+    
+	public static void main(String[] args) {
+		
+		for(int i=0; i<200; i++) {
+					
+			JSONObject tomJsonObjEnd = new JSONObject();
+		    tomJsonObjEnd.put("longitude", 9.96233);
+		    tomJsonObjEnd.put("latitude", 49.80404);
+		    
+			JSONObject tomJsonObj = new JSONObject();
+		    tomJsonObj.put("regiao", 4);
+		    tomJsonObj.put("chuva_percent", i);
+		    tomJsonObj.put("umidade_percent",35);
+		    tomJsonObj.put("vento_kmh",0);
+		    tomJsonObj.put("posicao", tomJsonObjEnd);
+		    tomJsonObj.put("data_hora", new Date() );
+		    JSONObject passportJsonObj = new JSONObject();
+		
+		    System.out.println(tomJsonObj.toString());
+			
+			Properties props=new Properties();
+			props.put("bootstrap.servers", "localhost:9092,localhost:9093");
+			props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+			props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+			
+			KafkaProducer<String,String> sampleProducer= new KafkaProducer<String,String>(props);
+			
+			sampleProducer.send(new ProducerRecord<String, String>("TopicoClima", tomJsonObj.toString()));
+			sampleProducer.close();
+
+//			ProducerRecord<String, String> record = new ProducerRecord<String, String>(topicName, value);		
+//			sampleProducer.send(record);
+//			for (int i = 20; i < 27; i++)
+//				sampleProducer.send(new ProducerRecord<String, String>("TutorialTopic","Data:"+ Integer.toString(i)));
+			
+		}
+
+		
+	} 
+}
+
+
+
+
+
+#pom.xml
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com</groupId>
+  <artifactId>sis1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>sis1</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    	<!-- Kafka client for producer/consumer operations -->
+	<dependency>
+	  <groupId>org.apache.kafka</groupId>
+	  <artifactId>kafka-clients</artifactId>
+	  <version>2.1.1</version>
+	</dependency>
+	
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20160810</version>
+    </dependency>
+    
+  </dependencies>
+</project>
