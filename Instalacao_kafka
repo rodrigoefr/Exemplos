@@ -164,12 +164,15 @@ Step 5 — Testing the Installation
 
 
 
-~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
+~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TopicoClima
+./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TopicoClima
 
 
 
-echo "Hello, World 5" | ~/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TutorialTopic > /dev/null
+echo "Hello, World 5" | ~/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TopicoClima > /dev/null
+./kafka-console-producer.sh --broker-list localhost:9092 --topic TopicoClima > /dev/null
 
 
 
 ~/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning
+./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TopicoClima --from-beginning
