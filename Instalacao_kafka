@@ -170,7 +170,7 @@ Step 5 — Testing the Installation
 
 
 echo "Hello, World 5" | ~/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TopicoClima > /dev/null
-./kafka-console-producer.sh --broker-list localhost:9092 --topic TopicoClima > /dev/null
+echo "Hello, World 5" | ./kafka-console-producer.sh --broker-list localhost:9092 --topic TopicoClima > /dev/null
 
 
 
