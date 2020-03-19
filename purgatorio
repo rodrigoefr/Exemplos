@@ -1,0 +1,64 @@
+
+
+https://www.coursera.org/learn/scala-spark-big-data/supplement/R7FJ9/eclipse-tutorial
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--- instalar jupyter notebook
+
+- instalar anaconda
+
+download
+
+bash Anaconda(..).sh
+
+- instaladr apache toree
+
+download
+
+pip install pyspark
+
+pip install toree-(...).tar.gz
+pip install toree
+
+jupyter toree install --spark_home=$SPARK_HOME --interpreters=Scala,PySpark,SQL --user	
+
+jupyter toree install --spark_home=$SPARK_HOME --interpreters=PySpark   
+obs: no caso de erro no pyspark
+
+jupyter notebook --no-browser
+
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
+
+-Obs
+funcionou com scala
+porém o pyspark não apareceu
+
+
+-------- configurar pyspark em jupyter notebook
+
+https://www.sicara.ai/blog/2017-05-02-get-started-pyspark-jupyter-notebook-3-minutes
+
+Method 1 — Configure PySpark driver
+Update PySpark driver environment variables: add these lines to your ~/.bashrc (or ~/.zshrc) file.
+
+export PYSPARK_DRIVER_PYTHON=jupyter
+export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
+
+Restart your terminal and launch PySpark again:
+
+$ pyspark
+
+
+Method 2 — FindSpark package
+
+To install findspark:
+$ pip install findspark
+
+Launch a regular Jupyter Notebook:
+$ jupyter notebook
+
+Create a new Python [default] notebook and write 
