@@ -176,3 +176,10 @@ echo "Hello, World 5" | ./kafka-console-producer.sh --broker-list localhost:9092
 
 ~/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning
 ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TopicoClima --from-beginning
+
+
+
+--
+ver a versão do kafka
+https://www.it-swarm.dev/pt/apache-kafka/como-encontrar-versao-kafka-no-linux/1050275389/
+Não tenho certeza se há uma maneira conveniente, mas você pode apenas inspecionar sua pasta kafka/libs. Você deve ver arquivos como kafka_2.10-0.8.2-beta.jar, onde 2.10 é a versão Scala e 0.8.2-beta é a versão Kafka.
