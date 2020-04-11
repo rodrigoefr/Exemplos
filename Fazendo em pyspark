@@ -1,0 +1,7 @@
+textFile = spark.read.text("/home/rodrigo/Documents/localizacoes.json")
+
+textFile.count()
+
+textFile.first()
+
+pyspark < teste1.py 	
