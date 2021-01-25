@@ -1,0 +1,11 @@
+
+
+tamanho = [2, 3, 4, 5, 10]
+custoA = [12, 13, 14, 15, 20]
+custoB = [4, 9, 16, 25, 100]
+
+from pylab import plot, show, legend
+
+plot(tamanho, custoA, tamanho, custoB)
+legend(['CustoA','CustoB'])
+show()
