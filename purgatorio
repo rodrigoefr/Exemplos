@@ -1,4 +1,59 @@
+import Modelo
+import QLearning
 
+# escolher conjunto de estudantes
+
+for x in range(30):
+    
+
+    estudante  = Modelo.Estudante()
+estudante2  = Modelo.Estudante()
+estudante3  = Modelo.Estudante()
+estudante4  = Modelo.Estudante()
+estudante5  = Modelo.Estudante()
+estudante6  = Modelo.Estudante()
+estudante7  = Modelo.Estudante()
+estudante8  = Modelo.Estudante()
+estudante9  = Modelo.Estudante()
+estudante10 = Modelo.Estudante()
+
+listaEstudantes = []
+listaEstudantes.append(estudante1)
+listaEstudantes.append(estudante2)
+listaEstudantes.append(estudante3)
+listaEstudantes.append(estudante4)
+listaEstudantes.append(estudante5)
+listaEstudantes.append(estudante6)
+listaEstudantes.append(estudante7)
+listaEstudantes.append(estudante8)
+listaEstudantes.append(estudante9)
+listaEstudantes.append(estudante10)
+
+
+for estudante in listaEstudantes:
+  print (estudante.nota)
+
+
+
+print(estudante.conceitosAprendidos.nota_compreensao_sw_codigofonte)
+
+
+# definir objetivos pedagogicos
+#   - maximizar nota geral
+
+
+# definir materiais didaticos
+
+acoesPedagogicas  = Modelo.AcoesPedagogicas()
+for acao in acoesPedagogicas.listaAcoes:
+    print(acao.nome)
+    print("\n")    
+
+qLearning = QLearning.QLearning();
+
+print (qLearning.tabelaQ)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 https://www.coursera.org/learn/scala-spark-big-data/supplement/R7FJ9/eclipse-tutorial
 
